@@ -224,8 +224,8 @@ echo "x membuat akun baru [myusernew]"  | tee -a log-install.txt
 echo "x membuat akun trial berdurasi 1 hari [mytrial]"  | tee -a log-install.txt
 echo "x mengahpus akun ssh [delete]"  | tee -a log-install.txt
 echo "x memeriksa user yang login [check]"  | tee -a log-install.txt
-echo "x memeriksa daftar user [myuser"  | tee -a log-install.txt
-echo "x restart service dropbear, webmin, squid3, ssh, & OpenVPN [rest-service]  | tee -a log-install.txt
+echo "x memeriksa daftar user [myuser]"  | tee -a log-install.txt
+echo "x restart service dropbear, webmin, squid3, ssh, & OpenVPN [rest-service]"  | tee -a log-install.txt
 echo "x reboot server [reboot]"  | tee -a log-install.txt
 echo "x test speed server [myspeed]"  | tee -a log-install.txt
 echo "x informasi server [myserver-info]"  | tee -a log-install.txt
