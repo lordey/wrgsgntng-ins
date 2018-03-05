@@ -161,6 +161,10 @@ echo '/swapfile swap swap defaults 0 0' >> /etc/fstab
 chmod 0600 /swapfile
 free -m
 
+#instal ruby dan lolcat
+sudo apt-get install ruby
+gem install lolcat
+
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
