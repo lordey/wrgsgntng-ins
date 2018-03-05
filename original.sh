@@ -165,6 +165,13 @@ free -m
 sudo apt-get install ruby
 gem install lolcat
 
+#instal screenfetch
+cd
+wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/lordey/screenfetch/master/screenfetch"
+chmod +x /usr/bin/screenfetch
+echo "clear" >> .profile
+echo "screenfetch | lolcat" >> .profile
+
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
