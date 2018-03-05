@@ -206,6 +206,7 @@ echo "x memeriksa daftar user [member]"  | tee -a log-install.txt
 echo "x restart service dropbear, webmin, squid3, ssh, & OpenVPN [resvis]"  | tee -a log-install.txt
 echo "x reboot server [reboot]"  | tee -a log-install.txt
 echo "x test speed server [speedtest]"  | tee -a log-install.txt
+echo "x informasi server [info]"  | tee -a log-install.txt
 echo "x informasi script [about]"  | tee -a log-install.txt
 echo "************************************" | tee -a log-install.txt
 echo "Builder : Dey Agustian"  | tee -a log-install.txt
