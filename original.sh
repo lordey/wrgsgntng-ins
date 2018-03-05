@@ -139,6 +139,16 @@ wget -O resvis "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/r
 wget -O speedtest "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/speedtest_cli.py"
 wget -O info "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/info.sh"
 wget -O about "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/about.sh"
+wget -O mymenu "https://raw.githubusercontent.com/lordey/lolcat-conf/master/mymenu.sh"
+wget -O myusernew "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myusernew.sh"
+wget -O mytrial "https://raw.githubusercontent.com/lordey/lolcat-conf/master/mytrial.sh"
+wget -O delete "https://raw.githubusercontent.com/lordey/lolcat-conf/master/delete.sh"
+wget -O check "https://raw.githubusercontent.com/lordey/lolcat-conf/master/check.sh"
+wget -O myuser "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myuser.sh"
+wget -O rest-service "https://raw.githubusercontent.com/lordey/lolcat-conf/master/rest-service.sh"
+wget -O myspeed "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myspeed.sh"
+wget -O myserver-info "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myserver-info.sh"
+wget -O about-script "https://raw.githubusercontent.com/lordey/lolcat-conf/master/about-script.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
@@ -152,6 +162,16 @@ chmod +x resvis
 chmod +x speedtest
 chmod +x info
 chmod +x about
+chmod +x mymenu
+chmod +x myusernew
+chmod +x mytrial
+chmod +x delete
+chmod +x check
+chmod +x myuser
+chmod +x rest-service
+chmod +x myspeed
+chmod +x myserver-info 
+chmod +x about-script
 
 # swap
 dd if=/dev/zero of=/swapfile bs=1024 count=2048k
@@ -197,17 +217,17 @@ echo "+ timezone [Asia/Jakarta (GMT +7]"  | tee -a log-install.txt
 echo "+ IPv6 [off]"  | tee -a log-install.txt
 echo "************************************" | tee -a log-install.txt
 echo "COMMAND LIST 	:"  | tee -a log-install.txt
-echo "x menampilkan command list/daftar perintah [menu]"  | tee -a log-install.txt
-echo "x membuat akun baru [usernew]"  | tee -a log-install.txt
-echo "x membuat akun trial berdurasi 1 hari [trial]"  | tee -a log-install.txt
-echo "x mengahpus akun ssh [hapus]"  | tee -a log-install.txt
-echo "x memeriksa user yang login [cek]"  | tee -a log-install.txt
-echo "x memeriksa daftar user [member]"  | tee -a log-install.txt
-echo "x restart service dropbear, webmin, squid3, ssh, & OpenVPN [resvis]"  | tee -a log-install.txt
+echo "x menampilkan command list/daftar perintah [mymenu]"  | tee -a log-install.txt
+echo "x membuat akun baru [myusernew]"  | tee -a log-install.txt
+echo "x membuat akun trial berdurasi 1 hari [mytrial]"  | tee -a log-install.txt
+echo "x mengahpus akun ssh [delete]"  | tee -a log-install.txt
+echo "x memeriksa user yang login [check]"  | tee -a log-install.txt
+echo "x memeriksa daftar user [myuser"  | tee -a log-install.txt
+echo "x restart service dropbear, webmin, squid3, ssh, & OpenVPN [rest-service]  | tee -a log-install.txt
 echo "x reboot server [reboot]"  | tee -a log-install.txt
-echo "x test speed server [speedtest]"  | tee -a log-install.txt
-echo "x informasi server [info]"  | tee -a log-install.txt
-echo "x informasi script [about]"  | tee -a log-install.txt
+echo "x test speed server [myspeed]"  | tee -a log-install.txt
+echo "x informasi server [myserver-info]"  | tee -a log-install.txt
+echo "x informasi script [about-script]"  | tee -a log-install.txt
 echo "************************************" | tee -a log-install.txt
 echo "Builder : Dey Agustian"  | tee -a log-install.txt
 echo "Thx to  : Fornesia, Rzengineer, Fawzya"  | tee -a log-install.txt
