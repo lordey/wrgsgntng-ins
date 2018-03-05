@@ -142,16 +142,16 @@ wget -O about "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/ab
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
-chmod +x menu
-chmod +x usernew
-chmod +x trial
-chmod +x hapus
-chmod +x cek
-chmod +x member
-chmod +x resvis
-chmod +x speedtest
-chmod +x info
-chmod +x about
+chmod +x menu | lolcat
+chmod +x usernew | lolcat
+chmod +x trial | lolcat
+chmod +x hapus | lolcat
+chmod +x cek | lolcat
+chmod +x member | lolcat
+chmod +x resvis | lolcat
+chmod +x speedtest | lolcat
+chmod +x info | lolcat
+chmod +x about | lolcat
 
 # swap
 dd if=/dev/zero of=/swapfile bs=1024 count=2048k
