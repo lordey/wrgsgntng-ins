@@ -56,7 +56,7 @@ echo "clear" >> .bashrc
 echo 'echo -e "Selamat datang di server $HOSTNAME"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 echo "clear" >> .bashrc
-echo "menu" >> .bashrc
+echo " " >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
 # install badvpn
@@ -191,6 +191,8 @@ wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/lordey/screenfet
 chmod +x /usr/bin/screenfetch
 echo "clear" >> .profile
 echo "screenfetch | lolcat" >> .profile
+echo " " >> .profile
+echo "mymenu" >> .profile
 
 # finishing
 cd
@@ -205,7 +207,7 @@ echo "unset HISTFILE" >> /etc/profile
 
 # info
 clear
-echo "************************************" | tee -a log-install.txt
+echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 echo "KONFIGURASI SERVER 	:"  | tee -a log-install.txt
 echo "+ open SSH [22, 444]"  | tee -a log-install.txt
 echo "+ dropbear [109, 110, 22507, 53]"  | tee -a log-install.txt
@@ -215,7 +217,7 @@ echo "+ badvpn-udpgw [7300]"  | tee -a log-install.txt
 echo "+ webmin [http://$MYIP:10000/]"  | tee -a log-install.txt
 echo "+ timezone [Asia/Jakarta (GMT +7]"  | tee -a log-install.txt
 echo "+ IPv6 [off]"  | tee -a log-install.txt
-echo "************************************" | tee -a log-install.txt
+echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 echo "COMMAND LIST 	:"  | tee -a log-install.txt
 echo "x menampilkan command list/daftar perintah [mymenu]"  | tee -a log-install.txt
 echo "x membuat akun baru [myusernew]"  | tee -a log-install.txt
@@ -228,9 +230,9 @@ echo "x reboot server [reboot]"  | tee -a log-install.txt
 echo "x test speed server [myspeed]"  | tee -a log-install.txt
 echo "x informasi server [myserver-info]"  | tee -a log-install.txt
 echo "x informasi script [about-script]"  | tee -a log-install.txt
-echo "************************************" | tee -a log-install.txt
+echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 echo "Builder : Dey Agustian"  | tee -a log-install.txt
 echo "Thx to  : Fornesia, Rzengineer, Fawzya"  | tee -a log-install.txt
-echo "************************************" | tee -a log-install.txt
+echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 cd
 rm -f /root/debian7.sh
