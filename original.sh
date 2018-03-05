@@ -55,6 +55,7 @@ apt-get install neofetch
 echo "clear" >> .bashrc
 echo 'echo -e "Selamat datang di server $HOSTNAME"' >> .bashrc
 echo 'echo -e "ketik menu untuk menampilkan perintah..."' >> .bashrc
+echo "clear" >> .bashrc
 echo "menu" >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
