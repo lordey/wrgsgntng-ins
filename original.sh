@@ -154,10 +154,8 @@ wget -O editbanner "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/mast
 wget -O 10 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/editbanner-lolcat.sh"
 wget -O vnstat "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/vnstat.sh"
 wget -O 11 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/vnstat-lolcat.sh"
-wget -O 12 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/opnvpncfg-lolcat.sh"
-wget -O opnvpncfg "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/opnvpncfg.sh"
-wget -O 13 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/fail2banconf-lolcat.sh"
-wget -O fail2banconf "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/fail2banconf.sh"
+wget -O 12 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/opnvpncfg.sh"
+wget -O 13 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/fail2banconf.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
@@ -182,14 +180,11 @@ chmod +x 8
 chmod +x 9 
 chmod +x 0
 chmod +x 00
-chmod +x editbanner
 chmod +x 10
 chmod +x vnstat
 chmod +x 11
 chmod +x 12
-chmod +x opnvpncfg
 chmod +x 13
-chmod +x fail2banconf
 
 # swap
 dd if=/dev/zero of=/swapfile bs=1024 count=2048k
