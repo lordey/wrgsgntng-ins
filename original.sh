@@ -195,6 +195,7 @@ chmod 0600 /swapfile
 free -m
 
 #instal ruby dan lolcat
+apt-get -y update && apt-get -y upgrade
 sudo apt-get install ruby
 gem install lolcat
 
