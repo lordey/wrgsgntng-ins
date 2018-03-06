@@ -205,7 +205,7 @@ chmod +x /usr/bin/screenfetch
 echo "clear" >> .profile
 echo "screenfetch | lolcat" >> .profile
 echo " " >> .profile
-echo "mymenu" >> .profile
+echo "1" >> .profile
 
 # instal vnstat
 apt-get -y install vnstat
