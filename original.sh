@@ -139,16 +139,25 @@ wget -O resvis "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/r
 wget -O speedtest "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/speedtest_cli.py"
 wget -O info "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/info.sh"
 wget -O about "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/about.sh"
-wget -O mymenu "https://raw.githubusercontent.com/lordey/lolcat-conf/master/mymenu.sh"
-wget -O myusernew "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myusernew.sh"
-wget -O mytrial "https://raw.githubusercontent.com/lordey/lolcat-conf/master/mytrial.sh"
-wget -O delete "https://raw.githubusercontent.com/lordey/lolcat-conf/master/delete.sh"
-wget -O check "https://raw.githubusercontent.com/lordey/lolcat-conf/master/check.sh"
-wget -O myuser "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myuser.sh"
-wget -O rest-service "https://raw.githubusercontent.com/lordey/lolcat-conf/master/rest-service.sh"
-wget -O myspeed "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myspeed.sh"
-wget -O myserver-info "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myserver-info.sh"
-wget -O about-script "https://raw.githubusercontent.com/lordey/lolcat-conf/master/about-script.sh"
+wget -O 1 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/mymenu.sh"
+wget -O 2 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myusernew.sh"
+wget -O 3 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/mytrial.sh"
+wget -O 4 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/delete.sh"
+wget -O 5 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/check.sh"
+wget -O 6 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myuser.sh"
+wget -O 7 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/rest-service.sh"
+wget -O 8 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myspeed.sh"
+wget -O 9 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/myserver-info.sh"
+wget -O 0 "https://raw.githubusercontent.com/lordey/lolcat-conf/master/about-script.sh"
+wget -O 00 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/reb.sh"
+wget -O editbanner "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/editbanner.sh"
+wget -O 10 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/editbanner-lolcat.sh"
+wget -O vnstat "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/vnstat.sh"
+wget -O 11 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/vnstat-lolcat.sh"
+wget -O 12 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/opnvpncfg-lolcat.sh"
+wget -O opnvpncfg "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/opnvpncfg.sh"
+wget -O 13 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/fail2banconf-lolcat.sh"
+wget -O fail2banconf "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/fail2banconf.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
@@ -162,16 +171,25 @@ chmod +x resvis
 chmod +x speedtest
 chmod +x info
 chmod +x about
-chmod +x mymenu
-chmod +x myusernew
-chmod +x mytrial
-chmod +x delete
-chmod +x check
-chmod +x myuser
-chmod +x rest-service
-chmod +x myspeed
-chmod +x myserver-info 
-chmod +x about-script
+chmod +x 1
+chmod +x 2
+chmod +x 3
+chmod +x 4
+chmod +x 5
+chmod +x 6
+chmod +x 7
+chmod +x 8
+chmod +x 9 
+chmod +x 0
+chmod +x 00
+chmod +x editbanner
+chmod +x 10
+chmod +x vnstat
+chmod +x 11
+chmod +x 12
+chmod +x opnvpncfg
+chmod +x 13
+chmod +x fail2banconf
 
 # swap
 dd if=/dev/zero of=/swapfile bs=1024 count=2048k
@@ -194,6 +212,16 @@ echo "screenfetch | lolcat" >> .profile
 echo " " >> .profile
 echo "mymenu" >> .profile
 
+# instal vnstat
+apt-get -y install vnstat
+vnstat -u -i eth0
+service vnstat restart
+
+# install fail2ban
+apt-get -y install fail2ban
+cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+service fail2ban restart
+
 # finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
@@ -202,6 +230,8 @@ service ssh restart
 service dropbear restart
 service squid3 restart
 service webmin restart
+service vnstat restart
+service fail2ban restart
 rm -rf ~/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 
@@ -209,27 +239,34 @@ echo "unset HISTFILE" >> /etc/profile
 clear
 echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 echo "KONFIGURASI SERVER 	:"  | tee -a log-install.txt
-echo "+ open SSH [22, 444]"  | tee -a log-install.txt
-echo "+ dropbear [109, 110, 22507, 53]"  | tee -a log-install.txt
-echo "+ SSL/TLS [443]"  | tee -a log-install.txt
-echo "+ squid3 [80, 8080]"  | tee -a log-install.txt
-echo "+ badvpn-udpgw [7300]"  | tee -a log-install.txt
-echo "+ webmin [http://$MYIP:10000/]"  | tee -a log-install.txt
-echo "+ timezone [Asia/Jakarta (GMT +7]"  | tee -a log-install.txt
-echo "+ IPv6 [off]"  | tee -a log-install.txt
+echo "+ Open SSH Port : 22"  | tee -a log-install.txt
+echo "+ Dropbear Port : 109, 110, 22507, 53"  | tee -a log-install.txt
+echo "+ STunnel Port : 443"  | tee -a log-install.txt
+echo "+ Squid3 Port : 80, 8080"  | tee -a log-install.txt
+echo "+ Badvpn-udpgw Port : 7300"  | tee -a log-install.txt
+echo "+ OpenVPN TCP Port : 1194 (if instaled)"  | tee -a log-install.txt
+echo "+ Webmin Port : http://$MYIP:10000/"  | tee -a log-install.txt
+echo "+ Timezone : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+echo "+ IPv6 : Off" | tee -a log-install.txt
+echo "+ Fail2Ban : ON"   | tee -a log-install.txt
 echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 echo "COMMAND LIST 	:"  | tee -a log-install.txt
-echo "x menampilkan command list/daftar perintah [mymenu]"  | tee -a log-install.txt
-echo "x membuat akun baru [myusernew]"  | tee -a log-install.txt
-echo "x membuat akun trial berdurasi 1 hari [mytrial]"  | tee -a log-install.txt
-echo "x mengahpus akun ssh [delete]"  | tee -a log-install.txt
-echo "x memeriksa user yang login [check]"  | tee -a log-install.txt
-echo "x memeriksa daftar user [myuser]"  | tee -a log-install.txt
-echo "x restart service dropbear, webmin, squid3, ssh, & OpenVPN [rest-service]"  | tee -a log-install.txt
-echo "x reboot server [reboot]"  | tee -a log-install.txt
-echo "x test speed server [myspeed]"  | tee -a log-install.txt
-echo "x informasi server [myserver-info]"  | tee -a log-install.txt
-echo "x informasi script [about-script]"  | tee -a log-install.txt
+echo "[1]  - Show List Command"  | tee -a log-install.txt
+echo "[2]  - Create New Account"  | tee -a log-install.txt
+echo "[3]  - Create Trial Accout For 1 Day"  | tee -a log-install.txt
+echo "[4]  - Delete Account"  | tee -a log-install.txt
+echo "[5]  - Checking Login Account"  | tee -a log-install.txt
+echo "[6]  - Checking List Account"  | tee -a log-install.txt
+echo "[7]  - Restart Service"  | tee -a log-install.txt
+echo "[8]  - Speedtest Server"  | tee -a log-install.txt
+echo "[9]  - Server Information"  | tee -a log-install.txt
+echo "[10] - Edit Banner"  | tee -a log-install.txt
+echo "[11] - Checking Bandwidth"  | tee -a log-install.txt
+echo "[12] - Show OpenVPN Configuration (if instaled)"  | tee -a log-install.txt
+echo "[13] - Edit Fail2ban Configuration (for security)"  | tee -a log-install.txt
+echo "[0]  - Script Information"  | tee -a log-install.txt
+echo "[00] - Reboot Server"  | tee -a log-install.txt
+echo "Write the number + enter for execution..." | tee -a log-install.txt
 echo "------------------------------------------------------------------------------" | tee -a log-install.txt
 echo "Builder : Dey Agustian"  | tee -a log-install.txt
 echo "Thx to  : Fornesia, Rzengineer, Fawzya"  | tee -a log-install.txt
