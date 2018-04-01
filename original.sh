@@ -156,6 +156,7 @@ wget -O vnstat "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/v
 wget -O 11 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/vnstat-lolcat.sh"
 wget -O 12 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/opnvpncfg.sh"
 wget -O 13 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/fail2banconf.sh"
+wget -O 14 "https://raw.githubusercontent.com/lordey/wrgsgntng-conf/master/userexp.sh"
 
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 
@@ -185,6 +186,7 @@ chmod +x vnstat
 chmod +x 11
 chmod +x 12
 chmod +x 13
+chmod +x 14
 
 # swap
 dd if=/dev/zero of=/swapfile bs=1024 count=2048k
@@ -260,6 +262,7 @@ echo "[10] - Edit Banner"  | tee -a log-install.txt
 echo "[11] - Checking Bandwidth"  | tee -a log-install.txt
 echo "[12] - Show OpenVPN Configuration (if instaled)"  | tee -a log-install.txt
 echo "[13] - Edit Fail2ban Configuration (for security)"  | tee -a log-install.txt
+echo "[14] - Tag User Expired"  | tee -a log-install.txt
 echo "[0]  - Script Information"  | tee -a log-install.txt
 echo "[00] - Reboot Server"  | tee -a log-install.txt
 echo "Write the number + enter for execution..." | tee -a log-install.txt
